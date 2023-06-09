@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                      //
-//                            LISTING PAGE DISPLAY THROUGH THIS COMPONENT.                              //
+//                            INITIAL PAGE DISPLAY THROUGH THIS COMPONENT.                              //
 //                                                                                                      //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -10,6 +10,8 @@ import {Container} from "react-bootstrap";
 import ButtonType from "./components/elementComponents/Button/Button";
 import MainModal from "./designs/MainModal/MainModal";
 import Head from "next/head";
+
+// FUNCTION FOR INITIAL PAGE DISPLAY
 const Home = () => {
   const [modalShow, setModalShow] = useState(false);
 	const openModal = () => {
@@ -29,7 +31,6 @@ const Home = () => {
           className="modalShow"
           show={modalShow}
           onHide={() => setModalShow(false)}
-          setmodalshow = {setModalShow}
       />
       <Container>
         <ButtonType  name="Open Modal" onClick={openModal} />

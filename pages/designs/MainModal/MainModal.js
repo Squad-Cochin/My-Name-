@@ -1,8 +1,8 @@
-//////////////////////////////////////////////////////////////
-///                                                         //
-///                  Test page to learn                     //
-///                                                         //
-//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+///                                                                                                    //
+///                          PAGE FOR SHOWING MAIN MODAL IN THE FIRST PAGE                             //
+///                                                                                                    //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
@@ -18,6 +18,7 @@ import Header from "../../components/pageComponents/Header/Header";
 import ButtonType from "../../components/elementComponents/Button/Button";
 import Styles from "./MainModal.module.scss";
 
+// FUNCTION FOR SHOWING MAIN MODAL
 const MainModal = (props) => {
     const [travelerDropShow, setTravelerDropShow] = useState(false);
     const [location, setLocation] = useState("");
@@ -117,10 +118,10 @@ const MainModal = (props) => {
                     </Col>
                     <Col xs={12} md={12}>
                         <Dropdown className={Styles.selecttraveller_box}  show={travelerDropShow} onToggle={setDropDownVisibility}>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            <Dropdown.Toggle  variant="success" id="dropdown-basic">
                                 {adult} Adults
                             </Dropdown.Toggle>
-                            <Dropdown.Menu>
+                            <Dropdown.Menu className={Styles.Dropdown_box}>
                                 <Row className="g-3">
                                     <Col xs={6}>
                                         <span className={Styles.label}>Adult</span>

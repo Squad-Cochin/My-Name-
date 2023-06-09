@@ -1,8 +1,8 @@
-//////////////////////////////////////////////////////////////
-///                                                         //
-///                  Test page to learn                     //
-///                                                         //
-//////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+///                                                                //
+///                  PAGE FOR STYLE MAIN MODAL                     //
+///                                                                //
+/////////////////////////////////////////////////////////////////////
 @import "../../../styles/_config.scss";
 
 .mainmodal{
@@ -14,6 +14,10 @@
         border: 1px solid $inputBoarder;
         color: $black;
     }
+    .selecttraveller_box .Dropdown_box {
+        padding: 15px 15px;
+        width: 100%;
+    }
     .submit{
         margin: 15px 0;
         width: 100%;
@@ -24,8 +28,9 @@
         border: 1px solid $inputBoarder;
         margin-bottom: 15px ;
         border-radius: 0.375rem;
-    }
-    
-
-    
+    } 
+    .applyButton:hover{
+        background-color: $button;
+    } 
 }
+
