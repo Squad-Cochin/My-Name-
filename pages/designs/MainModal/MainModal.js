@@ -17,9 +17,9 @@ import Input from "../../components/elementComponents/Input/Input";
 import Header from "../../components/pageComponents/Header/Header";
 import ButtonType from "../../components/elementComponents/Button/Button";
 import Styles from "./MainModal.module.scss";
-import { Container } from "react-bootstrap";
+import {Modal, Container } from "react-bootstrap";
 
-const MainModal = () => {
+const MainModal = (props) => {
     const [travelerDropShow, settravelerDropShow] = useState(false);
     const [childCount, setchildCount] = useState([]);
     const [children, setchildren] = useState(0);
@@ -74,10 +74,6 @@ const MainModal = () => {
         { value: "5", label: "5 days" ,key:"5"},
     ]
 
-    
-
-    
-
     const setDropDownVisibility = (e) => {
         let visibility = travelerDropShow ? false : true
         settravelerDropShow(visibility); 
@@ -113,7 +109,7 @@ const MainModal = () => {
     }
 
     return(
-        <>  
+        <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered > 
             <Container className={Styles.mainmodal}> 
                 <Header />
                 <Row >
@@ -155,15 +151,15 @@ const MainModal = () => {
                             </Col>
                             {childCount.map((item, index) => {
                                 return(
-                                <Col xs={6} className="mt-3 custom" key={index}>
-                                    <span className={Styles.label}>Child age </span>
-                                    <Select className="d-inline-block sort-select select-age" onChange={handleCountChildAges} options={childageOptions}/>
-                                </Col>
+                                    <Col xs={6} className="mt-3 custom" key={index}>
+                                        <span className={Styles.label}>Child age </span>
+                                        <Select className="d-inline-block sort-select select-age" onChange={handleCountChildAges} options={childageOptions}/>
+                                    </Col>
                                 )
                             })}
                             </Row>
                             <div className="mt-3">
-                            <ButtonType className={`${Styles.applyButton} btntype2`} name="Apply" />
+                                <ButtonType className={`${Styles.applyButton} btntype2`} name="Apply" />
                             </div>
                         </Dropdown.Menu>
                         </Dropdown>
@@ -175,8 +171,7 @@ const MainModal = () => {
                 </Row>
             </Container>
             
-        </>
-        
+        </Modal>
     )
 }
 

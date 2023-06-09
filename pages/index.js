@@ -5,9 +5,16 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+import React, {useState}from "react";
+import {Container} from "react-bootstrap";
+import ButtonType from "./components/elementComponents/Button/Button";
 import MainModal from "./designs/MainModal/MainModal";
 import Head from "next/head";
 const Home = () => {
+  const [modalShow, setModalShow] = useState(false);
+	const openModal = () => {
+		setModalShow(true)
+	}
   return (
     <>
       <Head>
@@ -18,7 +25,14 @@ const Home = () => {
         key="desc"
         />
       </Head>
-      <MainModal />
+      <MainModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          setmodalshow = {setModalShow}
+      />
+      <Container>
+        <ButtonType  name="Open Modal" onClick={openModal} />
+      </Container>
     </>
   );
 };
