@@ -24,6 +24,8 @@ const MainModal = () => {
     const [childCount, setchildCount] = useState([]);
     const [children, setchildren] = useState(0);
     const [adult, setAdult] = useState(1);
+    const [startDate, setStartDate] = useState(new Date());
+    const [date, setDate] = useState(new Date());
 
     const sortByOptions = [
         { value: "1", label: "1" ,key:"1"},
@@ -32,18 +34,17 @@ const MainModal = () => {
         { value: "4", label: "4" ,key:"4"},
         { value: "5", label: "5" ,key:"5"},
         { value: "6", label: "6" ,key:"6"}
-      ];
-      // NUMBER OF CHILD PASSENGER OPTIONS
-      const childcountOptions = [
+    ];
+    // NUMBER OF CHILD PASSENGER OPTIONS
+    const childcountOptions = [
         { value: "0", label: "0" ,key:"0"},
         { value: "1", label: "1" ,key:"1"},
         { value: "2", label: "2" ,key:"2"},
         { value: "3", label: "3" ,key:"3"},
         { value: "4", label: "4" ,key:"4"},
-    
-      ];
-      // CHILD AGE OPTIONS
-      const childageOptions = [
+    ];
+    // CHILD AGE OPTIONS
+    const childageOptions = [
         { value: "1", label: "1" ,key:"1"},
         { value: "2", label: "2" ,key:"2"},
         { value: "3", label: "3" ,key:"3"},
@@ -56,7 +57,25 @@ const MainModal = () => {
         { value: "10", label: "10" ,key:"10"},
         { value: "11", label: "11" ,key:"11"},
         { value: "12", label: "12" ,key:"12"}
-      ]
+    ]
+
+    const locations = [
+        { value: "UK", label: "UK" ,key:"0"},
+        { value: "Canada", label: "Canada" ,key:"1"},
+        { value: "Germany", label: "Germany" ,key:"2"},
+        { value: "India", label: "India" ,key:"3"}
+    ]
+
+    const duration = [
+        { value: "1", label: "1 day" ,key:"1"},
+        { value: "2", label: "2 days" ,key:"2"},
+        { value: "3", label: "3 days" ,key:"3"},
+        { value: "4", label: "4 days" ,key:"4"},
+        { value: "5", label: "5 days" ,key:"5"},
+    ]
+
+    
+
     
 
     const setDropDownVisibility = (e) => {
@@ -81,22 +100,43 @@ const MainModal = () => {
     
     }
 
+    const handleLocation = (e) => {
+        
+    }
+
+    const handleDuration = (e) => {
+        
+    };
+
+    const handleDate = (e) => {
+        setDate(e.target.value);
+    }
+
     return(
         <>  
             <Container className={Styles.mainmodal}> 
                 <Header />
                 <Row >
                     <Col xs={6}>
-                        <Input placeholder="Location"/>
+                        <Select placeholder="Select location" onChange={handleLocation} options={locations}/>
                     </Col>
                     <Col xs={6}>
                         <Input  placeholder="Destination"/>
                     </Col>                
                     <Col xs={6}>
-                        <Input type="time" max="23:59" placeholder="Duration"/>
+                        <Select placeholder="Select Duration" onChange={handleDuration} options={duration}/>
                     </Col>
                     <Col xs={6}>
-                        <Input type="date" placeholder="Select your start date"/>
+                        <div className={Styles.datePicker}>
+                        <DatePicker
+                         
+                            dateFormat="MMM dd"
+                            selected={startDate}
+                            onChange={(date) => {
+                                setStartDate(date); 
+                            }}       
+                        />
+                        </div>
                     </Col>
                     <Col xs={12} md={12}>
                         <Dropdown className={Styles.selecttraveller_box}  show={travelerDropShow} onToggle={setDropDownVisibility}>

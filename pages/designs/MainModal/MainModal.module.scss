@@ -16,8 +16,12 @@
     .submit{
         margin: 15px 0;
         width: 100%;
-       
-        
+    }
+    .datePicker input{
+        width: 100%;
+        height: 38px;
+        border: 1px solid $inputBoarder;
+        margin-bottom: 15px ;
     }
 
     
