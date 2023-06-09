@@ -1,0 +1,24 @@
+//////////////////////////////////////////////////////////////
+///                                                         //
+///                  Test page to learn                     //
+///                                                         //
+//////////////////////////////////////////////////////////////
+@import "../../../styles/_config.scss";
+
+.mainmodal{
+    padding: 0 25%;
+    .selecttraveller_box button{
+        width: 100%;
+        background: none;
+        border: 1px solid $inputBoarder;
+        color: $black;
+    }
+    .submit{
+        margin: 15px 0;
+        width: 100%;
+       
+        
+    }
+
+    
+}
