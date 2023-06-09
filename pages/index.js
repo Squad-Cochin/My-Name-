@@ -26,6 +26,7 @@ const Home = () => {
         />
       </Head>
       <MainModal
+          className="modalShow"
           show={modalShow}
           onHide={() => setModalShow(false)}
           setmodalshow = {setModalShow}

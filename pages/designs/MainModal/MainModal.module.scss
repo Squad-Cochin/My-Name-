@@ -6,7 +6,8 @@
 @import "../../../styles/_config.scss";
 
 .mainmodal{
-    padding: 0 25%;
+    padding: 0 10%;
+    margin-bottom: 10%;
     .selecttraveller_box button{
         width: 100%;
         background: none;
@@ -24,6 +25,7 @@
         margin-bottom: 15px ;
         border-radius: 0.375rem;
     }
+    
 
     
 }
