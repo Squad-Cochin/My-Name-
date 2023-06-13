@@ -109,6 +109,8 @@ const MainModal = (props) => {
                         <div className={Styles.datePicker}>
                             <DatePicker
                                 dateFormat="MMM dd"
+                                readOnly={true}
+                                placeholderText="Start Date"
                                 selected={startDate}
                                 onChange={(date) => {
                                     setStartDate(date); 
