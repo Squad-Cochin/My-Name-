@@ -12,9 +12,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Select from 'react-select';
 import {Modal, Container } from "react-bootstrap";
+import Link from "next/link";
 
 import Input from "../../components/elementComponents/Input/Input";
-import Header from "../../components/pageComponents/Header/Header";
+import HeaderAtCenter from "../../components/pageComponents/Header/Header";
 import ButtonType from "../../components/elementComponents/Button/Button";
 import Styles from "./MainModal.module.scss";
 
@@ -94,7 +95,12 @@ const MainModal = (props) => {
     return(
         <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered > 
             <Container className={Styles.mainmodal}> 
-                <Header />
+                <Row>
+                    <Col xs={10} className="mx-auto">
+                        <HeaderAtCenter />
+                    </Col>
+                </Row>
+                
                 <Row >
                     <Col xs={6}>
                         <Select placeholder="Select location" onChange={(e) => {setLocation(e.value)}} options={locations}/>
@@ -140,7 +146,16 @@ const MainModal = (props) => {
                         </Dropdown>
                     </Col>
                     <Col xs={12} md={12}>
-                        <ButtonType className={Styles.submit} onClick={submit} name="SUBMIT" />
+                        <Link href={
+                            {
+                                pathname: '/listing'
+                            }}
+                        >
+                            <ButtonType className={Styles.submit} onClick={submit} name="SUBMIT" />
+                        </Link>
+
+                        
+
                     </Col>  
                 </Row>
             </Container>

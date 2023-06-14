@@ -7,13 +7,10 @@ import MainModal from "./designs/MainModal/MainModal";
 
 
 const ModalButton = () => {
-
 	const [modalShow, setModalShow] = useState(false);
-
 	const openModal = () => {
 		setModalShow(true)
 	}
-
 	return(
 		<>
 			<MainModal

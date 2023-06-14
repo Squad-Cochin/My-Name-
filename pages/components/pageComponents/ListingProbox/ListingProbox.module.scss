@@ -1,29 +1,15 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 //                                                                                   //
-//                      FILE FOR STYLE HEADER COMPONENT                              //
+//                 FILE FOR STYLE DETAIL LISTING PROBOX COMPONENT.                   //
 //                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
 @import "../../../../styles/_config.scss";
-.centertopbar {
-  padding: 15px 0;
-  background-color: $white;
-    @media (max-width: 767px) {
-      .cart span{
-        display: none;
-      }
-    }
-
-}
-
-.lefttopbar {
-  padding: 1% 0 0 4.5%;
-  background-color: $white;
-    @media (max-width: 767px) {
-      .cart span{
-        display: none;
-      }
-    }
-
+.list_probox {
+  text-align: left;
+  padding-top: 20px;
+  h4{
+    color: $primary-color;
+  }
 }

@@ -15,11 +15,11 @@ import Logo from "../../../../public/images/moonstride-logo.svg";
 import Styles from "./Header.module.scss";
 
 // HEADER COMPONENT WITH MOONSTRIDE LOGO
-const Header = () => { 
+const HeaderAtCenter = () => { 
   return (
-    <header className={Styles.topbar}>
+    <header className={Styles.centertopbar}>
       <Container>
-      <Row className="mt-5">
+      <Row>
           <Col xs={12} lg={12} md={12} >
               <Link href="/"> 
                 <a className={Styles.logo}>
@@ -35,4 +35,22 @@ const Header = () => {
   );
 };
 
-export default Header;
+const HeaderAtLeft = () => { 
+  return (
+      <Container fluid={true} className={Styles.lefttopbar}>
+      <Row>
+          <Col xs={12} lg={12} md={12} >
+              <Link href="/" className={Styles.logo}> 
+                <a className={Styles.logo}>
+                  {/* The logo image will be displayed here */}
+                  <Image src={Logo} alt="Moonstride Logo" />
+                </a>
+              </Link>
+          </Col> 
+        </Row>
+      </Container>
+  );
+};
+
+export default HeaderAtCenter;
+export { HeaderAtLeft };
