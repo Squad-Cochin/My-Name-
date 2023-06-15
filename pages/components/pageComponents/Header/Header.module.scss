@@ -16,14 +16,17 @@
     }
 
 }
-
-.lefttopbar {
-  padding: 1% 0 0 4.5%;
-  background-color: $white;
-    @media (max-width: 767px) {
-      .cart span{
-        display: none;
+.header_cover{
+  border-bottom: 1px solid $border-color;
+  padding: 15px 0;
+  .lefttopbar {
+    padding: 15px 0;
+    background-color: $white;
+      @media (max-width: 767px) {
+        .cart span{
+          display: none;
+        }
       }
-    }
 
+  }
 }

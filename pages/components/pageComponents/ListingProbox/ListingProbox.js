@@ -12,8 +12,13 @@ import Col from "react-bootstrap/Col";
 import Link from "next/link";
 import Image from "next/image";
 // This component is designed for reusing buttons
-import ButtonType from "../../elementComponents/Button/Button";
+import Departure from "../Departure/Departure"
+import Stay from "../Stay/Stay";
+import Night from "../Night/Night";
+import Activities from "../Activities/Activities";
+import Activity from "../Activity/Activity";
 import Styles from "./ListingProbox.module.scss";
+
 
 // FUNCTION FOR DATA LISTING COMPONENT
 const ListingProbox = (props) => {
@@ -24,10 +29,18 @@ const ListingProbox = (props) => {
   return (
     <>
         <div className={Styles.list_probox} id="1" key="1">
-          <h4><b>Your day to day Itinerary</b></h4>
-          <p><b>Destination: </b>Paris, Rome</p>
-          <p><b>Date: </b>13/06/2023 to 17/06/2023</p>
+          <h4>Your day to day Itinerary</h4>
+           <div className={Styles.dest_and_time}>
+                <span>Destination:</span> Paris, Rome <br></br>
+                <span>Date:</span> 13/062023 to 17/06/2023
+           </div>
         </div>
+        <Departure />
+        <Stay />
+        <Night />
+        <Activity />
+        <Activities/>
+       
     </>
   );
 };

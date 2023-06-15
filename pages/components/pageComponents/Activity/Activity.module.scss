@@ -1,0 +1,107 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                 FILE FOR STYLE DEPARTURE COMPONENT.                               //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+@import "../../../../styles/_config.scss";
+.Activity {
+  text-align: left;
+  border: 1px solid #86b8f2;
+  margin-top: 30px;
+  border-radius: 6px;
+    .day{
+        background-color: #4588bd;
+        color: $white;
+        text-align: center;
+        padding: 30px 10px;
+        border-radius: 6px 0px 0px 6px;
+        font-weight: 700;
+        position: relative;
+        b{
+            transform: rotate(270deg) translate(0, 50%);
+            display: block;
+            font-size: 12px;
+            position: absolute;
+            margin: auto;
+            left: -50%;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform-origin: center;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 767px) {
+            padding: 10px 10px;
+            b{
+                transform: none;
+                position: initial;
+            }
+            .day{
+                border-radius: 7px 7px 0 0;
+            }
+        }
+    }
+    .head{
+        padding: 15px 0;
+    }
+    .date{
+        font-size: 12px;
+        font-weight: 400;
+    }
+  
+    span{
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0px 10px;
+    }
+   .flight{
+       text-align: end;
+       padding: 15px 10px;
+       span{
+        font-size: 13px;
+       }
+   }
+}
+.details{
+    padding: 20px 0;
+    position: relative;
+    .image_section{
+        overflow: hidden;
+        border-radius: 7px;
+        max-width: 50%;
+        margin: auto;
+        margin-bottom: 20px;
+        img{
+            width: 100%;
+        }
+    } 
+    .detail_section{
+        .title{
+            font-weight: bold;
+            color:$primary-color;
+            font-size: 18px;
+        }
+    }  
+    .rating svg {
+       fill: $button ;
+    } 
+    .book_now{
+        position: absolute;
+        bottom: 35px;
+        right: 0;
+        button{
+            padding: 10px 20px;
+        }
+    }
+    @media (max-width: 767px) {
+        .image_section{
+            max-width: initial;
+         }
+    
+      }  
+ 
+}

@@ -41,13 +41,21 @@
     .hedding{
       text-align: left;
       color: $primary-color ;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 10px;
     }
     .sidebar_box_contents{
       margin-bottom: 10px;
       text-align: left;
       border: 1px solid #dfdfdf;
       padding: 3% 0% 0% 3%;
-      border-radius: 7px;
+      border-radius: 3px;
+      font-weight: 500;
+      padding: 12px 10px;
+      .icon{
+        margin-right: 15px;
+      }
     }
     .sidebar_result {
       margin-bottom: 20px;

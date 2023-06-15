@@ -1,0 +1,100 @@
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                 FILE FOR STYLE DEPARTURE COMPONENT.                               //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+
+@import "../../../../styles/_config.scss";
+.Departure {
+  text-align: left;
+  background-color: #e4eaf1;
+  margin-top: 30px;
+  padding: 15px 10px;
+  border-radius: 6px;
+    .date{
+        font-size: 12px;
+        font-weight: 400;
+    }
+  
+    span{
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0px 10px;
+    }
+   .flight{
+       text-align: end;
+       span{
+        font-size: 13px;
+       }
+   }
+   @media (max-width: 767px) {
+    .flight{
+      float: left;
+    }
+    .icon_wrap{
+        display: none;
+    }
+
+  }
+}
+.Details{
+    padding: 20px 0;
+    position: relative;
+    .icon_wrap{
+        position: relative;
+        min-height: 70px;
+        height: 100%;
+    }
+    .flight{
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background-color: #ffeb3b;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .Flight_details{
+        span{
+            font-weight: 600;
+        }
+        .title{
+        font-size: 20px;
+        font-weight: bold;
+        }
+    .duration span{
+        margin-right: 20px;
+    }
+  } 
+  .btntype1 {
+    background-color: #fe6652;
+    border-color: #fe6652;
+    padding: 13px 10px 14px;
+  }
+  .button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+     button{
+        padding: 10px 20px;
+     }
+  } 
+  @media (max-width: 767px) {
+    .icon_wrap{
+        display: none;
+    }
+    .button{
+        position: relative;
+        margin-top: 20px;
+    }
+
+  }
+}

@@ -11,5 +11,12 @@
   padding-top: 20px;
   h4{
     color: $primary-color;
+    font-weight: bold;
+  }
+  .dest_and_time{
+    font-size: 14px;
+    span{
+      font-weight: 600;
+    }
   }
 }

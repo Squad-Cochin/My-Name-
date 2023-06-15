@@ -37,9 +37,10 @@ const HeaderAtCenter = () => {
 
 const HeaderAtLeft = () => { 
   return (
-      <Container fluid={true} className={Styles.lefttopbar}>
+    <div className={Styles.header_cover}>
+      <Container>
       <Row>
-          <Col xs={12} lg={12} md={12} >
+          <Col lg={12} md={12} sm={12}>
               <Link href="/" className={Styles.logo}> 
                 <a className={Styles.logo}>
                   {/* The logo image will be displayed here */}
@@ -49,6 +50,7 @@ const HeaderAtLeft = () => {
           </Col> 
         </Row>
       </Container>
+    </div>
   );
 };
 

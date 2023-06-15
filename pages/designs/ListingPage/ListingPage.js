@@ -11,22 +11,17 @@ const ListingPage = ()=> {
   return (
     <>  
         <HeaderAtLeft />
-        <hr />
-        <Row className="text-center">
-            <Col xs={11}  className="mx-auto">
-            <Row>
-                <Col xs={4} className={Style.sidebar} >
+        <div className="container"> 
+        <Row className={Style.ListingPage}>           
+                <Col lg={4} md={12} className={Style.sidebar} >
                     <BookingSidebar />
                     <TripSummarySidebar />
                 </Col>
-                <Col xs={8}>
+                <Col lg={8} md={12} >
                     <ListingProbox />
-                </Col>
-            </Row>
-            </Col>
-            
-        </Row>
-        
+                </Col>  
+         </Row>
+        </div> 
     </>
   )
 }
