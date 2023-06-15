@@ -139,7 +139,8 @@ const MainModal = (props) => {
                 </Row>
                 
                 <Row >
-                    <Col xs={6}>
+                    <Col lg={6} md={12} xs={12}>
+                       <div className={Styles.border}> 
                         <AsyncSelect
                             className={`search_formbox ${Styles.searchInput}`}
                             loadOptions={loadOptions}
@@ -149,9 +150,10 @@ const MainModal = (props) => {
                             instanceId={`searchlocations1`}
                         
                         /> 
+                        </div>
                     </Col>
-                    <Col xs={6}>
-                    
+                    <Col lg={6} md={12} xs={12}>
+                    <div className={Styles.border}> 
                         <AsyncSelect
                             className={`search_formbox ${Styles.searchInput}`}
                             loadOptions={loadOptions}
@@ -160,11 +162,15 @@ const MainModal = (props) => {
                             cacheOptions={true}
                             instanceId={`searchlocations2`}
                         />
+                        </div>
                     </Col>                
-                    <Col xs={6}>
+                    <Col lg={6} md={12} xs={12}>
+                    <div className={Styles.border}> 
                         <Select placeholder="Select Duration" onChange={(e) => {setDuration(e.value)}} options={durations}/>
+                     </div>   
                     </Col>
-                    <Col xs={6}>
+                    <Col lg={6} md={12} xs={12}>
+                    <div className={Styles.border}> 
                         <div className={Styles.datePicker}>
                             <DatePicker
                                 dateFormat="MMM dd"
@@ -175,8 +181,9 @@ const MainModal = (props) => {
                                 }}       
                             />
                         </div>
+                       </div> 
                     </Col>
-                    <Col xs={12} md={12}>
+                    <Col lg={12} xs={12} md={12} >
                         <Dropdown className={Styles.selecttraveller_box}  show={travelerDropShow} onToggle={setDropDownVisibility}>
                             <Dropdown.Toggle  variant="success" id="dropdown-basic">
                                 {adult} Adults
@@ -204,7 +211,7 @@ const MainModal = (props) => {
                                 pathname: '/listing'
                             }}
                         >
-                            <ButtonType className={Styles.submit} onClick={submit} name="SUBMIT" />
+                            <ButtonType className={`${Styles.submit} btntype1`}  onClick={submit} name="SUBMIT" />
                         </Link>
 
                         
