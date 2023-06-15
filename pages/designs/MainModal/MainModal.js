@@ -10,9 +10,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Select from 'react-select';
+import Select, {components, IndicatorSeparatorProps } from 'react-select';
+import AsyncSelect from 'react-select/async'
 import {Modal, Container } from "react-bootstrap";
 import Link from "next/link";
+import axios from 'axios';
 
 import Input from "../../components/elementComponents/Input/Input";
 import HeaderAtCenter from "../../components/pageComponents/Header/Header";
@@ -63,6 +65,41 @@ const MainModal = (props) => {
         { value: "5", label: "5 days" ,key:"5"},
     ]
 
+    // THIS FUNCTION IS USE TO FETCH LOCATION BASED ON SEARCH
+    const getAPIResults = async (inputValue) => {
+        if(inputValue.length >=3){
+            //let destinations = await locationOptions(inputValue);
+            const data = {
+                searchtext: inputValue,   	
+            };
+            let destination = await axios.get(`./api/location?searchtext=${inputValue}`);
+            //console.log(destination);
+            let destinations =  destination.data.location;
+            let locationDetails = []
+            for (let index = 0; index < destinations.length; index++) {
+                let location = {}
+                location.key = index;
+                location.label = destinations[index].value;
+                location.value = destinations[index].value;
+                locationDetails.push(location);
+            }   
+            return locationDetails;
+        }
+        else{
+            return [];
+        }
+    };
+    
+    // THIS FUNCTION PROVIDES MATCHING RESULT TO SEARCH RESULT
+    const loadOptions =  async (inputValue) => 
+        // perform a request
+        new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(getAPIResults(inputValue));
+        })
+        });
+  
+
     // FUNCTION TO OPEN ADULT AND CHILD SELECTOR
     const setDropDownVisibility = (e) => {
         let visibility = travelerDropShow ? false : true
@@ -103,10 +140,26 @@ const MainModal = (props) => {
                 
                 <Row >
                     <Col xs={6}>
-                        <Select placeholder="Select location" onChange={(e) => {setLocation(e.value)}} options={locations}/>
+                        <AsyncSelect
+                            className={`search_formbox ${Styles.searchInput}`}
+                            loadOptions={loadOptions}
+                            placeholder= "Location"
+                            onChange={(e) => {setLocation(e.value)}}
+                            cacheOptions={true}
+                            instanceId={`searchlocations1`}
+                        
+                        /> 
                     </Col>
                     <Col xs={6}>
-                        <Input  placeholder="Destination" onChange={(e) => {setDestination(e.target.value)}} value={destination}/>
+                    
+                        <AsyncSelect
+                            className={`search_formbox ${Styles.searchInput}`}
+                            loadOptions={loadOptions}
+                            placeholder= "Destination"
+                            onChange={(e) => {setDestination(e.value)}}
+                            cacheOptions={true}
+                            instanceId={`searchlocations2`}
+                        />
                     </Col>                
                     <Col xs={6}>
                         <Select placeholder="Select Duration" onChange={(e) => {setDuration(e.value)}} options={durations}/>
