@@ -1,18 +1,17 @@
 ///////////////////////////////////////////////////////////////////////////////////////
 //                                                                                   //
-//                THIS PAGE IS FOR CHECKBOX AND RADIO BUTTON COMPONENT               //
+//                        THIS PAGE IS FOR CHECKBOX COMPONENT                        //
 //                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
-
-//We installed react-bootstrap and used the form component from the library.
+// Packages installed
 import Form from "react-bootstrap/Form";
 
-// IMPORT PAGES
+// Files import
 import Styles from "./Checkbox.module.scss";
 
-// FUNCTION FOR CHECKBOX COMPONENT (DEFAULT)
+// Default function for checkbox component
 const CheckboxType = (props) => {
   return (
     <div key={props.id} className= "mb-3">
@@ -23,7 +22,7 @@ const CheckboxType = (props) => {
   );
 };
 
-// DEFAULT PROPERTIES FOR CHECKBOXTYPE
+// Default properties of the checkbox component.
 CheckboxType.defaultprops = {
   type: "checkbox",
   label: "Label",
@@ -38,4 +37,5 @@ CheckboxType.defaultprops = {
   onchange: () => {}
 };
 
+// Export function
 export default CheckboxType;

@@ -1,7 +1,16 @@
-// { This component is used to reuse the label and input when we receive values through props }
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                     THIS PAGE IS FOR INPUT BOX COMPONENT                          //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Packages installed
 import Form from "react-bootstrap/Form";
+
+// Files import
 import Styles from "./Input.module.scss";
 
+// Default function of the input box component.
 const InputType = (props) => {
   return (
     <Form.Group className={`mb-3 ${props.class}`}>
@@ -11,6 +20,8 @@ const InputType = (props) => {
     </Form.Group>
   );
 };
+
+// Default properties of the input box component.
 InputType.defaultProps = {
   type: "text",
   width: "auto",
@@ -22,4 +33,6 @@ InputType.defaultProps = {
   active: false,
   class: "formbox",
 };
+
+// Export function
 export default InputType;

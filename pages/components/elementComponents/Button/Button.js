@@ -1,9 +1,17 @@
-// This component can be reused for buttons 
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//                        THIS PAGE IS FOR BUTTON COMPONENT                          //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
+
+// Packages installed
 import Button from "react-bootstrap/Button";
+
+// Files import
 import Styles from "./Button.module.scss";
 
+// Default function of the button component.
 const ButtonType = (props) => {
-
   return (
     <>
       <Button
@@ -20,6 +28,7 @@ const ButtonType = (props) => {
   );
 };
 
+// Default properties of the button component.
 ButtonType.defaultProps = {
   width: "auto",
   icon: "",
@@ -30,4 +39,5 @@ ButtonType.defaultProps = {
   onClick: function(){},
 };
 
+// Export function
 export default ButtonType;

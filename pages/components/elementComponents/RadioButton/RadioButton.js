@@ -6,13 +6,13 @@
 
 
 
-//We installed react-bootstrap and used the form component from the library.
+// Packages installed
 import Form from "react-bootstrap/Form";
 
-// IMPORT PAGES
+// Files import
 import Styles from "./RadioButton.module.scss";
 
-// FUNCTION FOR RADIO BUTTON COMPONENT (CUSTOM)
+// Default function of the radio button component.
 const RadioButton = (props) => {
   return (
     <div key={props.id} className= "mb-3">
@@ -23,7 +23,7 @@ const RadioButton = (props) => {
   );
 };
 
-// DEFAULT PROPERTIES FOR CHECKBOXTYPECUSTOM
+// Default properties of the radio button component.
 RadioButton.defaultprops = {
   title: "Select",
   name: "",
@@ -31,4 +31,5 @@ RadioButton.defaultprops = {
   onchange: () => {}
 };
 
+// Export function
 export default RadioButton;
